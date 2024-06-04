@@ -1,33 +1,30 @@
-package ua.edu.nung.pz.model;
+package com.lab.pz.model;
 
 import java.util.Objects;
 
 public class User {
-    public static final String USER_SESSION_NAME = "user";
-    private String email;
+    private String username;
     private String password;
-    private String displayName;
     private String phone;
     private String city;
     private String street;
 
     public User() {}
 
-    public User(String email, String password, String displayName, String phone, String city, String street) {
-        this.email = email;
+    public User(String username, String password, String phone, String city, String street) {
+        this.username = username;
         this.password = password;
-        this.displayName = displayName;
         this.phone = phone;
         this.city = city;
         this.street = street;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUsername() {
+        return username;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -62,18 +59,10 @@ public class User {
         this.street = street;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
     @Override
     public String toString() {
         return "User{" +
-                "Email='" + email + '\'' +
+                "Username='" + username + '\'' +
                 ", Password='" + password + '\'' +
                 ", Phone='" + phone + '\'' +
                 ", City='" + city + '\'' +
@@ -86,11 +75,13 @@ public class User {
         if (this == o) return true;
         if (!(o instanceof User)) return false;
         User user = (User) o;
-        return Objects.equals(getEmail(), user.getEmail()) && Objects.equals(getPhone(), user.getPhone()) && Objects.equals(getCity(), user.getCity()) && Objects.equals(getStreet(), user.getStreet());
+        return Objects.equals(getUsername(), user.getUsername()) && Objects.equals(getPassword(), user.getPassword()) && Objects.equals(getPhone(), user.getPhone()) && Objects.equals(getCity(), user.getCity()) && Objects.equals(getStreet(), user.getStreet());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getEmail(), getPassword(), getPhone(), getCity(), getStreet());
+        return Objects.hash(getUsername(), getPassword(), getPhone(), getCity(), getStreet());
     }
 }
+
+
