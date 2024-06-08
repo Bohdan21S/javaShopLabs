@@ -17,7 +17,7 @@ public class UserRepository {
                 Connection connection = dataSource.getConnection();
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(sql);
-        )
+                )
         {
             if (resultSet.next()) {
                 user.setId(resultSet.getLong("id"));

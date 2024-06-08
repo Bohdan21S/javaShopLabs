@@ -70,7 +70,6 @@ public class MainPage {
             path = ViewConfig.getInstance().getPath();
             return new Builder();
         }
-
         public Builder setHeader(String userName) {
             String html = getHtml("headerPartial");
             if (userName.length() > 0) {

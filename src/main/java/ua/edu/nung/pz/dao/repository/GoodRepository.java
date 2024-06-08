@@ -35,9 +35,9 @@ public class GoodRepository {
             order = " ORDER BY p.created_at DESC";
         }
         String sql = "SELECT g.*, p.* " +
-                "FROM goods g " +
-                "LEFT JOIN prices p ON g.id = p.good_id " +
-                where + order;
+                    "FROM goods g " +
+                    "LEFT JOIN prices p ON g.id = p.good_id " +
+                     where + order;
 
         try (
                 Connection connection = dataSource.getConnection();
